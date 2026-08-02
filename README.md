@@ -29,3 +29,7 @@ Thus, folders labelled `K4` in this release correspond to `K=3` in the paper not
 ## Dataset note
 
 The raw QUB-PHEO dataset is not redistributed in this repository. Users should obtain dataset access through the official dataset release and follow its terms of use.
+
+## Contact
+
+For questions about the benchmark release, reproducibility files, or access to non-redistributed materials, please contact: lalshehab01@qub.ac.uk
