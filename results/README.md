@@ -24,4 +24,4 @@ In the paper, the history depth is reported with the current state treated as de
 
 Thus, folders labelled `K4` in this release correspond to `K=3` in the paper notation.
 
-Intermediate development runs, internal experiments, raw dataset files, and model weights are not included in this curated release folder.
+Intermediate development runs, intermediate experiments, raw dataset files, and model weights are not included in this curated release folder.

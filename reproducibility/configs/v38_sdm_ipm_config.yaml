@@ -1,0 +1,18 @@
+gru:
+  version: "V3.7.1_task_aware_merged34_sdm"
+  seed: 42
+  epochs: 60
+  batch_size: 16
+  lr: 0.001
+  arch: gru
+  hidden_dim: 128
+  modality: fusion_task_aware
+  use_weighted_ce: true
+
+  data:
+    csv_path: "L_action/datasets/L_subtasks_byTask_time_FULL_exactH5.csv"
+    h5_root: "dataset/landmarks"
+
+  output:
+    results_dir: "L_action/docs/results/V3_HDT/V3.7_SDM_redesign/V3.7.1_task_aware"
+    weights_dir: "weights/V3.7.1_task_aware"
