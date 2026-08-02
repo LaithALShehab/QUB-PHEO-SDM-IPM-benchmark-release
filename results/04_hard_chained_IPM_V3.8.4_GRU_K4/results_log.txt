@@ -1,0 +1,25 @@
+Model: HardHistoryGRUIPM
+Version: V3.8.4_IPM_hard_history_GRU_K4_E60
+Task: IPM next-subtask prediction from hard SDM history
+Input: K=4 hard predicted SDM states + task embedding
+History definition: [t-3, t-2, t-1, t] predicted current-subtask states -> true subtask(t+1)
+History columns: ['hist-3_pred_label_id', 'hist-2_pred_label_id', 'hist-1_pred_label_id', 'hist0_pred_label_id']
+State embedding: nn.Embedding(num_classes=34, dim=64)
+Task embedding: nn.Embedding(num_tasks=9, dim=16)
+Backbone: nn.GRU(input_size=64, hidden_size=128, batch_first=True)
+Classifier: Linear(hidden=128 + task_emb=16 -> classes=34)
+Loss: weighted cross entropy
+Optimizer: AdamW, lr=0.001, weight_decay=0.0001
+Batch size: 64
+Epochs: 60
+Selection: best model by validation Macro-F1
+Evaluation: participant-held-out test split
+Primary metric: Macro-F1
+Secondary metrics: Accuracy, Macro-Precision, Macro-Recall
+
+Final TEST using best validation model:
+Test Accuracy: 0.723014
+Test Macro-F1: 0.654202
+Test Macro-Precision: 0.659563
+Test Macro-Recall: 0.710672
+Best epoch by validation Macro-F1: 48

@@ -1,0 +1,12 @@
+Model: SoftHistoryMLP
+Version: V3.8.10d_IPM_soft_history_MLP_K4_E100_dropout03_seed42
+Task: IPM next-subtask prediction
+Input: K=4 soft SDM history, each step = 34 probabilities + confidence + entropy
+Flattened input dim: 144
+Task context: embedding, dim=16
+Backbone: MLP hidden layers [256, 128], dropout=0.3
+Target: next true merged-34 subtask label
+Loss: weighted cross entropy
+Optimizer: AdamW, lr=0.001, weight_decay=0.0001
+Selection: best model by validation Macro-F1
+Evaluation: participant-held-out test split

@@ -1,0 +1,30 @@
+{
+  "version": "V3.8.4_IPM_hard_history_GRU_K4_E60",
+  "stage": "IPM hard-history chaining from V3.8.1 SDM predictions",
+  "input": "K=4 hard SDM predicted current-subtask history + task embedding",
+  "target": "next true subtask label",
+  "label_space": "merged-34 next-subtask labels",
+  "backbone": "GRU",
+  "K": 4,
+  "history_columns": [
+    "hist-3_pred_label_id",
+    "hist-2_pred_label_id",
+    "hist-1_pred_label_id",
+    "hist0_pred_label_id"
+  ],
+  "state_embedding_dim": 64,
+  "task_embedding_dim": 16,
+  "hidden_dim": 128,
+  "num_classes": 34,
+  "num_tasks": 9,
+  "epochs": 60,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "loss": "Weighted Cross Entropy",
+  "best_epoch_by_val_macro_f1": 48,
+  "test_accuracy": 0.7230142566191446,
+  "test_macro_f1": 0.6542021737259274,
+  "test_macro_precision": 0.6595633816654601,
+  "test_macro_recall": 0.7106722965470805
+}

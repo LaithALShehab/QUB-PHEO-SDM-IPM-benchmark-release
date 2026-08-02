@@ -1,0 +1,23 @@
+{
+  "version": "V3.8.1_SDM_fusion_taskaware_merged34_GRU_E60_L64_sorted",
+  "split": "train",
+  "rows": 7170,
+  "input_dim": 207,
+  "num_classes": 34,
+  "checkpoint": "L_action/docs/results/V3_HDT/V3.8_SDM_fusion_fairness_reset/V3.8.1_fusion_taskaware_merged34_GRU_E60_L64_sorted/weights/best_model.pt",
+  "output_csv": "L_action/docs/results/V3_HDT/V3.8_SDM_fusion_fairness_reset/V3.8.1_fusion_taskaware_merged34_GRU_E60_L64_sorted/rich_predictions/v381_sdm_rich_predictions_train.csv",
+  "columns_include": [
+    "file",
+    "participant",
+    "task",
+    "start_time",
+    "end_time",
+    "true_label_id",
+    "pred_label_id",
+    "true_label_name",
+    "pred_label_name",
+    "confidence",
+    "entropy",
+    "prob_00...prob_33"
+  ]
+}

@@ -1,0 +1,25 @@
+version: V3.8.10d_IPM_soft_history_MLP_K4_E100_dropout03_seed42
+stage: IPM soft-history chaining from V3.8.1 SDM predictions
+input: K=4 SDM probability vectors + confidence + entropy + task embedding
+target: next true subtask label
+label_space: merged-34 next-subtask labels
+backbone: MLP
+K: 4
+soft_step_dim: 36
+flattened_input_dim: 144
+task_embedding_dim: 16
+hidden_layers: [256, 128]
+dropout: 0.3
+num_classes: 34
+num_tasks: 9
+epochs: 100
+batch_size: 64
+learning_rate: 0.001
+weight_decay: 0.0001
+loss: Weighted Cross Entropy
+best_epoch_by_val_macro_f1: 21
+test_accuracy: 0.7535641547861507
+test_macro_f1: 0.6784136494006514
+test_macro_precision: 0.6775349654932294
+test_macro_recall: 0.748658619248028
+csv_path: L_action/docs/results/V3_HDT/V3.8_SDM_fusion_fairness_reset/V3.8.5_IPM_soft_history_chaining/v381_soft_history_chaining_K4.csv

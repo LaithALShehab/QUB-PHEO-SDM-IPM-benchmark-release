@@ -1,0 +1,16 @@
+Model: GRUClassifier
+Version: V3.8.1_SDM_fusion_taskaware_merged34_GRU_E60_L64_sorted
+Task: SDM current-subtask detection
+Input shape per sample: (L=64, D=207)
+Input features: fusion visual vector = hands + gaze + objects + task-aware feature
+Label space: merged-34 current-subtask labels
+Backbone: nn.GRU(input_dim=207, hidden_size=128, batch_first=True)
+Classifier: Linear(hidden=128 -> classes=34)
+Loss: weighted cross entropy
+Optimizer: AdamW, lr=0.001
+Batch size: 64
+Epochs: 60
+Selection: best model by validation Macro-F1
+Evaluation: participant-held-out test split
+Primary metric: Macro-F1
+Secondary metrics: Accuracy, Macro-Precision, Macro-Recall

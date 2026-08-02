@@ -1,0 +1,20 @@
+{
+  "version": "V3.8.1_SDM_fusion_taskaware_merged34_GRU_E60_L64_sorted",
+  "stage": "SDM current-subtask detection",
+  "input": "fusion visual features + task-aware feature",
+  "label_space": "merged-34 current-subtask labels",
+  "backbone": "GRU",
+  "input_dim": 207,
+  "sequence_length": 64,
+  "hidden_dim": 128,
+  "num_classes": 34,
+  "epochs": 60,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "loss": "Weighted Cross Entropy",
+  "best_epoch_by_val_macro_f1": 48,
+  "test_accuracy": 0.7136729222520107,
+  "test_macro_f1": 0.635552490104393,
+  "test_macro_precision": 0.6559760182307808,
+  "test_macro_recall": 0.6630351831702979
+}
