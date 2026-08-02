@@ -1,0 +1,65 @@
+# Minimal configuration summary for the final soft-state IPM MLP result.
+# Folder: results/02_final_soft_IPM_V3.8.10d_MLP_K4
+
+model:
+  stage: IPM
+  interface: soft_state
+  backbone: MLP
+  hidden_layers: [256, 128]
+  dropout: 0.3
+
+history:
+  code_K: 4
+  paper_K: 3
+  meaning: current SDM state plus three previous states
+
+training:
+  epochs: 100
+  selection: best validation Macro-F1
+  seed: 42
+
+input:
+  source: SDM soft-state history
+  components:
+    - SDM class-probability vector
+    - confidence
+    - entropy
+    - task context
+
+notes:
+  raw_dataset: not redistributed
+  model_weights: not included
+EOFcd /mnt/c/Users/laith/QUB-PHEO-SDM-IPM-benchmark-release
+
+cat > reproducibility/configs/final_soft_ipm_mlp_config.yaml <<'EOF'
+# Minimal configuration summary for the final soft-state IPM MLP result.
+# Folder: results/02_final_soft_IPM_V3.8.10d_MLP_K4
+
+model:
+  stage: IPM
+  interface: soft_state
+  backbone: MLP
+  hidden_layers: [256, 128]
+  dropout: 0.3
+
+history:
+  code_K: 4
+  paper_K: 3
+  meaning: current SDM state plus three previous states
+
+training:
+  epochs: 100
+  selection: best validation Macro-F1
+  seed: 42
+
+input:
+  source: SDM soft-state history
+  components:
+    - SDM class-probability vector
+    - confidence
+    - entropy
+    - task context
+
+notes:
+  raw_dataset: not redistributed
+  model_weights: not included
